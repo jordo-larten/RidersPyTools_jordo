@@ -8,6 +8,8 @@ from .include.GenericData import GenericData
 from .include.GearStats import GearStats
 from .include.Constants import *
 from .GameState import GAME_VERSION, RACESTATE_ID_TO_NAME, ALL_RACESTATES, RaceState
+from .Player import Player
+
 INIT_STATE = True
 
 # Note: these are vanilla addresses as default
@@ -113,6 +115,9 @@ class RidersObject:
         self.stageTimer = [GenericData(addresses_to_use["StageTimer"], u8),
                            GenericData(addresses_to_use["StageTimer"] + 0x1, u8),
                            GenericData(addresses_to_use["StageTimer"] + 0x2, u8)]
+
+        # List of all players 1-4
+        self.players = [Player(0 + idx) for idx in range(0, 3)]
 
         INIT_STATE = False
         pass

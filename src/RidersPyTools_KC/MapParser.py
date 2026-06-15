@@ -2,7 +2,6 @@
 # Repurposed to read in symbols and add it to the object database of an instantiated object in this package
 
 import io, sys, os
-
 # parse_map allow these to be fully read in the symbol entry section
 allowed_sections = {
     ".init": True,
@@ -19,12 +18,14 @@ allowed_sections = {
 
 # add known symbols we want to be able to modify with our py package
 # or, just all symbols honestly
-
-
+global lookingList_global, ptr_dict_list_global
+lookingList_global = ["players"]
+ptr_dict_list_global = {}
 def parse_map(mapfile: io.TextIOWrapper, dolphinmapfile: io.TextIOWrapper, start_address: int):
     is_section_allowed = False
     memory_map_found = False
-
+    global ptr_dict_list_global
+    ptr_dict_list = {}
     line = mapfile.readline()
 
     while line:
@@ -69,11 +70,15 @@ def parse_map(mapfile: io.TextIOWrapper, dolphinmapfile: io.TextIOWrapper, start
 
         # Here, we gather what symbols are.
         # in *(.bss) exists players. Get it from linelist[1]
-        if len(linelist) > 1 and linelist[1] == "players":
+        #if len(linelist) > 1 and linelist[1] == "players":
+        if (len(linelist) > 1) and linelist[1] in lookingList_global :
+            #print("Found TE ptr list:\n")
             # Store address and name it in our config/constants for TE
-            print("Found TE player ptr list:\n" + linelist[0] + " " + linelist[1])
+            #print(linelist[0] + " " + linelist[1])
+            ptr_dict_list[linelist[1]] = int(linelist[0], 16)
             pass
         line = mapfile.readline()
+    ptr_dict_list_global = ptr_dict_list
 
 
 def parse_for_dol(parentdir, dolphinmapfile: io.TextIOWrapper):
@@ -109,20 +114,17 @@ def parse_for_rel(parentdir, dolphinmapfile: io.TextIOWrapper):
 # I don't know how we'd do that for ALL instances when we make this a package.
 # So, figure that out in the future, future me.
 
-buildDir = "../build"
-if len(sys.argv) > 1:
-    buildDir = sys.argv[1]
-buildDir = os.path.normpath(buildDir)
+def read_for_list(buildDir, lookingList=["players"]):
+    global lookingList_global,ptr_dict_list_global
+    lookingList_global = lookingList
+    buildDir = os.path.normpath(buildDir) #buildDir must be a folder that contains GXSRTE.map, main.dol, main.map
 
-dolphinMapFile = open("GXSRTE.map", "w")
+    dolphinMapFile = open("GXSRTE.map", "w")
 
-dolphinMapFile.write("-- main.dol memory map --\n\n")
-parse_for_dol(buildDir, dolphinMapFile)
+    dolphinMapFile.write("-- main.dol memory map --\n\n")
+    parse_for_dol(buildDir, dolphinMapFile)
+    return ptr_dict_list_global
 
-# dolphinMapFile.write("\n-- _Main.rel memory map --\n\n")
-# parse_for_rel(buildDir, dolphinMapFile)
-
-dolphinMapFile.close()
 
 def read_for_files(pathToMap):
     # buildDir = "../build" # not needed anymore

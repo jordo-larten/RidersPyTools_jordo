@@ -1,45 +1,20 @@
-# RidersPyTools
+# Jordskatools/JordTools
+A set of tools for Sonic Riders and its mods (Primarily Tournament Edition).
+Forked off of and utilizing RidersPyTools by KidWizardOfTheWeb, a Riders-specific Python library for interfacing with the Dolphin Memory Engine python library
 
-Package designed to write scripts for Sonic Riders (GameCube) and Sonic Riders: Zero Gravity (Wii). Compatible with vanilla/all mods.
+## Extreme Gear Garage (E.G.G.)
+Allows the user to edit player and gear data in real time. Including Boost speeds, air, rings, and more.
+WIP -A feature to save premade gear stats as a form of prototyping a gear
 
-Still a MAJOR work in progress, but functional at a basic level for now.
+## Time Trial Buddy
+A program designed to be ran alongside a Riders race, to record race times and potentially more stats. 
+Supports saving and exporting times, indexed by character, gear, stage, mode, and more.
 
-## Code style
+## Record Keeper
+A program to display said records saved by the Time Trial Buddy. Supports sorting by all indexes saved by Time Trial Buddy.
 
-We enforce the same standards as the SRTE C++ codebase, aiming to be as close as possible in syntax.
+### Other features
+Allows for linking of directory that contains .map files for unique builds of Riders.
 
-In some cases, this isn't 100% possible, but it remains the goal, as this allows us to read code similarly between C++ and python, 
-as well as provide a bridge for newer users learning to program to jump into the C++ side of things.
-
-Some concepts:
-
-Ways to get a player pointer:
-Instantiate a player object in Python:
-
-`player1 = Player(0)`
-
-Instantiate a player object starting at X address:
-
-`player1 = Player(0, 0x80609440)`
-
-Things you can do:
-
-Read data:
-
-`print(player1.rings)`
-
-```python
-if player1.rings > 0:
-    print("You have at least one ring!")
-```
-
-Write data:
-
-```python
-player1.currentAir = 100000
-player1.gearStats[int(player1.level)].boostSpeed = pSpeed(300.0)
-```
-
-And you can integrate this into other scripts too!
-
-We use hatchling to compile the builds. Build compilation instructions coming soon.
+# How to run:
+For Windows: Download as .zip and double click 'run_tools.bat' in the folder. On first run, it will install python in and build a .venv folder within the directory.

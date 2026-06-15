@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>429</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_7">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>Stage: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="stageLabel">
+             <property name="text">
+              <string>stage</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Archetype: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="archLabel">
+             <property name="text">
+              <string>arch</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Type: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="typeLabel">
+             <property name="text">
+              <string>typ</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Gear: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="gearLabel">
+             <property name="text">
+              <string>gear</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Character: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="charLabel">
+             <property name="text">
+              <string>chr</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>Mode:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="modeLabel">
+             <property name="text">
+              <string>mode</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="2">
+          <widget class="QPushButton" name="resetButton">
+           <property name="maximumSize">
+            <size>
+             <width>79</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Reset</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_15">
+           <property name="sizeConstraint">
+            <enum>QLayout::SizeConstraint::SetMinimumSize</enum>
+           </property>
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QLabel" name="label_15">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Session Best Time:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignmentFlag::AlignHCenter">
+            <widget class="QLabel" name="bestSessionTimeLabel">
+             <property name="text">
+              <string>N/A</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <property name="sizeConstraint">
+            <enum>QLayout::SizeConstraint::SetMinimumSize</enum>
+           </property>
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QLabel" name="label_7">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Best Time (Current Build):</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignmentFlag::AlignHCenter">
+            <widget class="QLabel" name="bestTimeBuildLabel">
+             <property name="text">
+              <string>N/A</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_13">
+           <property name="sizeConstraint">
+            <enum>QLayout::SizeConstraint::SetMinimumSize</enum>
+           </property>
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QLabel" name="label_11">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Best Lap (Session): </string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignmentFlag::AlignHCenter">
+            <widget class="QLabel" name="bestLapSessionLabel">
+             <property name="text">
+              <string>N/A</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_14">
+           <property name="sizeConstraint">
+            <enum>QLayout::SizeConstraint::SetMinimumSize</enum>
+           </property>
+           <item alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QLabel" name="label_8">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Best Time(Stage):</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignmentFlag::AlignHCenter">
+            <widget class="QLabel" name="bestTimeStageLabel">
+             <property name="text">
+              <string>N/A</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_9">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_24">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item alignment="Qt::AlignmentFlag::AlignHCenter">
+            <widget class="QLabel" name="label_16">
+             <property name="font">
+              <font>
+               <underline>false</underline>
+              </font>
+             </property>
+             <property name="text">
+              <string>Current Race:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item alignment="Qt::AlignmentFlag::AlignRight">
+              <widget class="QLabel" name="label_12">
+               <property name="text">
+                <string>Lap 1: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lap1Label">
+               <property name="text">
+                <string>N/A</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <item alignment="Qt::AlignmentFlag::AlignRight">
+              <widget class="QLabel" name="label_13">
+               <property name="text">
+                <string>Lap 2: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lap2Label">
+               <property name="text">
+                <string>N/A</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <item alignment="Qt::AlignmentFlag::AlignRight">
+              <widget class="QLabel" name="label_14">
+               <property name="text">
+                <string>Lap 3: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lap3Label">
+               <property name="text">
+                <string>N/A</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_10">
+             <item alignment="Qt::AlignmentFlag::AlignRight">
+              <widget class="QLabel" name="label_17">
+               <property name="text">
+                <string>Finish Time:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="finishTimeLabel">
+               <property name="text">
+                <string>N/A</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_11">
+             <item alignment="Qt::AlignmentFlag::AlignRight">
+              <widget class="QLabel" name="label_10">
+               <property name="text">
+                <string>Best Lap TIme:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="bestLapLabel">
+               <property name="text">
+                <string>N/A</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QComboBox" name="altBox">
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::LeftToRight</enum>
+             </property>
+             <property name="minimumContentsLength">
+              <number>25</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>Best Race (Build)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Best Race (Stage)</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_19">
+             <item alignment="Qt::AlignmentFlag::AlignRight">
+              <widget class="QLabel" name="label_18">
+               <property name="text">
+                <string>Lap 1: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lap1AltLabel">
+               <property name="text">
+                <string>N/A</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_20">
+             <item alignment="Qt::AlignmentFlag::AlignRight">
+              <widget class="QLabel" name="label_19">
+               <property name="text">
+                <string>Lap 2: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lap2AltLabel">
+               <property name="text">
+                <string>N/A</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_21">
+             <item alignment="Qt::AlignmentFlag::AlignRight">
+              <widget class="QLabel" name="label_20">
+               <property name="text">
+                <string>Lap 3: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lap3AltLabel">
+               <property name="text">
+                <string>N/A</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_22">
+             <item alignment="Qt::AlignmentFlag::AlignRight">
+              <widget class="QLabel" name="label_21">
+               <property name="text">
+                <string>Finish Time:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="finishTimeAltLabel">
+               <property name="text">
+                <string>N/A</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_23">
+             <item alignment="Qt::AlignmentFlag::AlignRight">
+              <widget class="QLabel" name="label_22">
+               <property name="text">
+                <string>Best Lap TIme:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="bestLapAltLabel">
+               <property name="text">
+                <string>N/A</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_17">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_16">
+           <item>
+            <widget class="QPushButton" name="dmeHookButton">
+             <property name="text">
+              <string>DME Hook</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="dmeLabel">
+             <property name="text">
+              <string>Unknown</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QPushButton" name="loadStateButton">
+           <property name="text">
+            <string>Load Current State</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QPushButton" name="jordoButton">
+           <property name="text">
+            <string>do the jord</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="refreshRecordsButton">
+           <property name="text">
+            <string>Refresh Records</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignmentFlag::AlignRight">
+          <widget class="QCheckBox" name="recordTimeChkBox">
+           <property name="layoutDirection">
+            <enum>Qt::LayoutDirection::RightToLeft</enum>
+           </property>
+           <property name="text">
+            <string>Record Times</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

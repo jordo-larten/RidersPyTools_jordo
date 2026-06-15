@@ -3,12 +3,11 @@ Contains all memory addresses from map/vanilla addresses fallback
 """
 
 import dolphin_memory_engine as DME
+from .include.Controller import Controller
 from .include.GenericData import GenericData
 from .include.GearStats import GearStats
 from .include.Constants import *
 from .GameState import GAME_VERSION, RACESTATE_ID_TO_NAME, ALL_RACESTATES, RaceState
-from .Player import Player
-
 INIT_STATE = True
 
 # Note: these are vanilla addresses as default
@@ -17,10 +16,18 @@ default_general_addresses = {
     "CurrentGameMode": 0x806129A0,
     "geGame_ModeDetail": 0x806129A4,
     "CurrentStage": 0x806129A8,
-    "ExitMethod": 0x806129C0,
+    "RaceExitMethod": 0x806129C0,
     "StageTimer": 0x80612B40,
-    "playerPtrStartAddr": VANILLA_PLAYER_PTR
 }
+
+
+buildDir = load_path()
+if buildDir:
+    lookingList = ["CurrentGameMode", "geGame_ModeDetail", "CurrentStage", "RaceExitMethod"]
+    ptr_dict_list = read_for_list(buildDir, lookingList)
+    for key,value in ptr_dict_list.items():
+        default_general_addresses[key] = value
+
 
 class RidersObject:
     def __getattr__(self, name):
@@ -102,13 +109,10 @@ class RidersObject:
         self.currentMode = GenericData(addresses_to_use["CurrentGameMode"], vu32)
         self.gameModeDetail = GenericData(addresses_to_use["geGame_ModeDetail"], vu32)
         self.currentStage = GenericData(addresses_to_use["CurrentStage"], vu32)
-        self.exitMethod = GenericData(addresses_to_use["ExitMethod"], u32)
+        self.exitMethod = GenericData(addresses_to_use["RaceExitMethod"], u32)
         self.stageTimer = [GenericData(addresses_to_use["StageTimer"], u8),
                            GenericData(addresses_to_use["StageTimer"] + 0x1, u8),
                            GenericData(addresses_to_use["StageTimer"] + 0x2, u8)]
-
-        # List of all players 1-4
-        self.players = [Player(0 + idx) for idx in range(0,3)]
 
         INIT_STATE = False
         pass

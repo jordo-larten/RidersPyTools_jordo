@@ -15,6 +15,13 @@ CHR_AIAI = 13
 CHR_ULALA = 14
 CHR_E10G = 15
 CHR_E10R = 16
+CHR_SILVER = 17
+CHR_METAL_SONIC = 18
+CHR_EMERL = 19
+CHR_BLAZE = 20
+CHR_CHAOS_0 = 21
+CHR_TIKAL = 22
+CHR_MIKU = 23
 
 CHR_ID_TO_NAME = {
     CHR_SONIC: "Sonic",
@@ -33,7 +40,15 @@ CHR_ID_TO_NAME = {
     CHR_AIAI: "AiAi",
     CHR_ULALA: "Ulala",
     CHR_E10G: "E-10000G",
-    CHR_E10R: "E-10000R"
+    CHR_E10R: "E-10000R",
+    ## TE Characters
+    CHR_SILVER: "Silver",
+    CHR_METAL_SONIC: "Metal Sonic",
+    CHR_EMERL: "Emerl",
+    CHR_BLAZE: "Blaze",
+    CHR_CHAOS_0: "Chaos 0",
+    CHR_TIKAL: "Tikal",
+    CHR_MIKU: "Hatsune Miku",
 }
 ALL_CHRS = list(CHR_ID_TO_NAME.keys())
 

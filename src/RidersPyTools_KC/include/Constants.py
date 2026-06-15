@@ -1,4 +1,8 @@
 from enum import Enum
+
+from QtFiles.settingsFunc import load_path
+from src.RidersPyTools_KC.MapParser import read_for_list
+
 # ID
 
 SPEED_DIVISOR = 216.0
@@ -10,7 +14,12 @@ BASE_ID: int = 8770000
 VANILLA_PLAYER_PTR: int = 0x80609440
 
 # NOTE: init player ptr for TE if detected using map file/map file passed in
-TE_PLAYER_PTR: int = 0x80532d80 # change to match the current ptr at time of release. Read main.map using map parser and change in config.py.
+try:
+    ptrStringDict = read_for_list(load_path())
+    TE_PLAYER_PTR = ptrStringDict['players']
+except:
+    TE_PLAYER_PTR: int = 0x80532d80 # change to match the current ptr at time of release. Read main.map using map parser and change in config.py.
+
 # 2.4.6 fix 1 0x80532d80
 
 ZG_PLAYER_PTR: int = 0x804970CC # Player 1, other players may not be sequential. Do more research for this.
